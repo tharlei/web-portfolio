@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { FaConnectdevelop } from 'react-icons/fa';
-// import bg from '../../assets/bg.jpg'
 
 export const Container = styled.div`
 	@media(min-width: 1024px) {
@@ -73,12 +72,18 @@ export const Main = styled.main`
 export const SocialWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	color: #FFF;
 	font-weight: bold;
 	justify-content: center;
 
-	svg {
+	@media(min-width: 1024px) {
+		a {
+			font-size: 18px;
+		}
+	}
+
+	a {
 		margin-top: 15px;
+		color: #FFF;
 	}
 `;
 
