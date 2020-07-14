@@ -1,34 +1,25 @@
 import React from 'react';
-
-import { FaLinkedin, FaGithub, FaArrowRight, FaEnvelope } from 'react-icons/fa';
-
-import { Container } from './styles';
-import { Header, LogoIcon, LogoName, Menu, MenuItem, LogoWrapper } from './styles';
-
-import { Main, SocialWrapper, Content, MyselfImg, TitleWrapper, ImgWrapper } from './styles';
-
-import { Footer, Marker, NextWrapper, Next } from './styles';
-
-import Myself from '../../assets/myself.png';
-import bg from '../../assets/bg.jpg'
 import { Link } from 'react-router-dom';
+
+import Menu from '../../components/Menu'
+import { FaLinkedin, FaGithub, FaArrowRight, FaEnvelope, FaConnectdevelop } from 'react-icons/fa';
+import { Container, Background } from './styles';
+import { Header, LogoWrapper } from './styles';
+import { Main, SocialWrapper, Content, MyselfImg, TitleWrapper, ImgWrapper } from './styles';
+import { Footer, Marker, NextWrapper } from './styles';
+
+import Selfie from '../../assets/myself.png';
 
 const Home = () => {
   return (
-    <div id="page-home" style={{ background: `url(${bg}) ` }}>
+    <Background>
       <Container>
         <Header>
-          <LogoWrapper>
-            <LogoIcon />
-            <LogoName>
-              Tharlei Aleixo
-          </LogoName>
+          <LogoWrapper to="/">
+            <FaConnectdevelop />
+            <span>Tharlei Aleixo</span>
           </LogoWrapper>
-          <Menu>
-            <MenuItem>Sobre</MenuItem>
-            <MenuItem>Portfólio</MenuItem>
-            <MenuItem>Contato</MenuItem>
-          </Menu>
+          <Menu />
         </Header>
 
         <Main>
@@ -45,7 +36,7 @@ const Home = () => {
           </SocialWrapper>
           <Content>
             <ImgWrapper>
-              <MyselfImg src={Myself} alt='Myself' />
+              <MyselfImg src={Selfie} alt='Myself' />
             </ImgWrapper>
             <TitleWrapper>
               <h1>Desenvolvedor</h1>
@@ -55,15 +46,13 @@ const Home = () => {
         </Main>
         <Footer>
           <Marker>01</Marker>
-          <NextWrapper>
-            <Next>
-              Próxima página
-            </Next>
+          <NextWrapper to="/">
+            <span>Próxima página</span>
             <FaArrowRight />
           </NextWrapper>
         </Footer>
       </Container>
-    </div>
+    </Background>
   );
 }
 

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import { FaConnectdevelop } from 'react-icons/fa';
+import bg from '../../assets/bg.jpg'
+
+export const Background = styled.div`
+	background: url(${bg});
+`;
 
 export const Container = styled.div`
 	@media(min-width: 1024px) {
@@ -19,43 +24,32 @@ export const Container = styled.div`
 export const Header = styled.header`
 	display: flex;
 	justify-content: space-between;
+
 	@media(max-width: 1024px) {
 		margin-top: 20px;
 	}
-
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(Link)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 26px;
 	font-weight: bold;
+	text-decoration: none;
 	color: #fff;
-`;
 
-export const LogoIcon = styled(FaConnectdevelop)`
-	margin-right: 10px;
-`;
+	span {
+		text-transform: uppercase;
+	}
 
-export const LogoName = styled.h1`
-	text-transform: uppercase;
-`;
+	svg {
+		margin-right: 10px;
+	}
 
-export const Menu = styled.div`
-	display: flex;
 	@media(max-width: 1024px) {
-    display: none;
-  }
-`;
-
-export const MenuItem = styled.span`
-	color: #fff;
-	font-size: 16px;
-	margin-left: 8rem;
-	text-transform: uppercase;
-	font-weight: 400;
-	text-align: right;
+		font-size: 20px;
+	}
 `;
 
 /**
@@ -94,7 +88,7 @@ export const Content = styled.div`
 	width: 100%;
 
 	@media(max-width: 1024px) {
-		margin: 50px 0px 50px 0px;
+		margin: 50px 0px 80px 0px;
 		flex-direction: column-reverse;
 		align-items: center;
   }
@@ -131,11 +125,11 @@ export const TitleWrapper = styled.div`
 
 	@media(max-width: 1024px) {
 		h1 {
-			font-size: 42px;
+			font-size: 38px;
 		}
 
 		span {
-			font-size: 30px;
+			font-size: 28px;
 			margin-top: 5px;
 		}
 	}
@@ -161,6 +155,7 @@ export const Footer = styled.footer`
 	display: flex;
 	justify-content: space-between;
 	color: #FFF;
+	margin-bottom: 20px;
 `;
 
 export const Marker = styled.h1`
@@ -169,18 +164,20 @@ export const Marker = styled.h1`
 	border-bottom: 5px solid #FFF;
 `;
 
-export const NextWrapper = styled.div`
+export const NextWrapper = styled(Link)`
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	transform: rotate(90deg);
 	font-size: 12px;
+	color: #FFF;
+	text-decoration: none;
 	
 	svg {
 		margin-left: 5px;
 	}
-`;
 
-export const Next = styled.span`
-	text-transform: uppercase;
+	span {
+		text-transform: uppercase;
+	}
 `;
