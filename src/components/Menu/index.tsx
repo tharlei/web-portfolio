@@ -15,7 +15,7 @@ const Menu = () => {
       <DesktopMenu>
         {
           items.map(item => (
-            <DesktopMenuItem>{item}</DesktopMenuItem>
+            <DesktopMenuItem key={item}>{item}</DesktopMenuItem>
           ))
         }
       </DesktopMenu>
@@ -24,7 +24,7 @@ const Menu = () => {
         <Sidebar className={mobileSidebar ? 'sidebar-animate' : ''}>
           {
             items.map(item => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))
           }
         </Sidebar>

@@ -21,6 +21,12 @@ export const MobileMenu = styled.div`
 	height: 60px;
 	width: 60px;
 	display: flex;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	
 	@media(min-width: 1024px) {
     display: none;
@@ -41,11 +47,26 @@ export const MobileMenu = styled.div`
 	}
 
 	.sidebar-animate {
-		height: 150vh;
-		width: 100%;
+		position: fixed; 
+		display: flex;
+   	overflow-y: scroll;
+   	top: 0; 
+		right: 0; 
+		bottom: 0; 
+		left: 0;
+		animation-duration: 0.50s;
+  	animation-name: slidein;
 
-		li {
-			display: block;
+		@keyframes slidein {
+			from {
+				margin-right: 100%;
+				width: 0%
+			}
+
+			to {
+				margin-right: 0%;
+				width: 100%;
+			}
 		}
 	}
 `;
@@ -60,6 +81,8 @@ export const Button = styled.div`
 	box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
 	width: 60px;
 	z-index: 2;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
 `;
 
 export const Icon = styled.span`
@@ -97,18 +120,15 @@ export const Sidebar = styled.ul`
   z-index: 2;
   top: 0;
   left: 0;
-  padding-top: 150px;
 	background: #000;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
-	overflow-wrap: none;
 
 	li {
-		display: none;
   	color: #FFF;
-		font-size: 36px;
+		font-size: 28px;
 		font-weight: bold;
-		margin-top: 100px;
+		margin-top: 60px;
 	}
 `;

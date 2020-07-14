@@ -38,6 +38,8 @@ export const LogoWrapper = styled(Link)`
 	font-weight: bold;
 	text-decoration: none;
 	color: #fff;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
 
 	span {
 		text-transform: uppercase;
@@ -172,6 +174,8 @@ export const NextWrapper = styled(Link)`
 	font-size: 12px;
 	color: #FFF;
 	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
 	
 	svg {
 		margin-left: 5px;
