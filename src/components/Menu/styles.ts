@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface MobileMenu {
+	active: boolean;
+}
 
 export const DesktopMenu = styled.ul`
 	display: flex;
@@ -16,7 +20,7 @@ export const DesktopMenuItem = styled.li`
 	text-align: right;
 `;
 
-export const MobileMenu = styled.div`
+export const MobileMenu = styled.div<MobileMenu>`
 	transition: box-shadow 1.1s cubic-bezier(.19,1,.22,1);
 	height: 60px;
 	width: 60px;
@@ -31,43 +35,31 @@ export const MobileMenu = styled.div`
 	@media(min-width: 1024px) {
     display: none;
   }
-	
-	.icon-animate {
-		transform: rotate(45deg);
 
-		:after {
-			transform: rotate(90deg);
-			bottom: 0;
+	${props =>
+		props.active && css`
+		div {
+			position: fixed;
 		}
 
-		:before {
-      transform: rotate(90deg);
-		  top: 0;
-		}
-	}
+		div span {
+			transform: rotate(45deg);
 
-	.sidebar-animate {
-		position: fixed; 
-		display: flex;
-   	overflow-y: scroll;
-   	top: 0; 
-		right: 0; 
-		bottom: 0; 
-		left: 0;
-		animation-duration: 0.50s;
-  	animation-name: slidein;
-
-		@keyframes slidein {
-			from {
-				margin-right: 100%;
-				width: 0%
+			:after {
+				transform: rotate(90deg);
+				bottom: 0;
 			}
 
-			to {
-				margin-right: 0%;
-				width: 100%;
+			:before {
+				transform: rotate(90deg);
+				top: 0;
 			}
 		}
+
+		ul {
+			display: flex;
+		}
+		`
 	}
 `;
 
@@ -116,12 +108,14 @@ export const Icon = styled.span`
 `;
 
 export const Sidebar = styled.ul`
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-	background: #000;
 	display: none;
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	left: 0;
+  z-index: 2;
+	background: #000;
+	height: 120vh;
 	flex-direction: column;
 	align-items: center;
 
@@ -130,5 +124,20 @@ export const Sidebar = styled.ul`
 		font-size: 28px;
 		font-weight: bold;
 		margin-top: 60px;
+	}
+
+	animation-duration: 0.50s;
+	animation-name: showMenu;
+
+	@keyframes showMenu {
+		from {
+			margin-right: 100%;
+			width: 0%
+		}
+
+		to {
+			margin-right: 0%;
+			width: 100%;
+		}
 	}
 `;

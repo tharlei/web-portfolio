@@ -20,8 +20,8 @@ const Menu = () => {
         }
       </DesktopMenu>
 
-      <MobileMenu>
-        <Sidebar className={mobileSidebar ? 'sidebar-animate' : ''}>
+      <MobileMenu active={mobileSidebar}>
+        <Sidebar>
           {
             items.map(item => (
               <li key={item}>{item}</li>
@@ -29,7 +29,7 @@ const Menu = () => {
           }
         </Sidebar>
         <Button onClick={() => setMobileSidebar(!mobileSidebar)}>
-          <Icon className={mobileSidebar ? 'icon-animate' : ''} />
+          <Icon />
         </Button>
       </MobileMenu>
     </div>
