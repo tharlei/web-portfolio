@@ -1,11 +1,17 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes'
+import ReactGA from 'react-ga';
 
-import './styles.css'
+import './App.css'
 
-function App() {
+const App = () => {
+  ReactGA.initialize('UA-175515182-1');
+
   return (
-    <Routes />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 

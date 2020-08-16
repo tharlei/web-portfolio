@@ -18,6 +18,12 @@ export const DesktopMenuItem = styled.li`
 	text-transform: uppercase;
 	font-weight: 400;
 	text-align: right;
+	cursor: pointer;
+	
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
 `;
 
 export const MobileMenu = styled.div<MobileMenu>`
@@ -63,7 +69,7 @@ export const MobileMenu = styled.div<MobileMenu>`
 	}
 `;
 
-export const Button = styled.div`
+export const MobileButtonClose = styled.div`
 	position: relative;
 	background: #000;
 	box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
@@ -107,7 +113,7 @@ export const Icon = styled.span`
 	}
 `;
 
-export const Sidebar = styled.ul`
+export const MobileMenuList = styled.ul`
 	display: none;
 	position: fixed; 
 	top: 0; 
@@ -118,13 +124,6 @@ export const Sidebar = styled.ul`
 	height: 120vh;
 	flex-direction: column;
 	align-items: center;
-
-	li {
-  	color: #FFF;
-		font-size: 28px;
-		font-weight: bold;
-		margin-top: 60px;
-	}
 
 	animation-duration: 0.50s;
 	animation-name: showMenu;
@@ -139,5 +138,18 @@ export const Sidebar = styled.ul`
 			margin-right: 0%;
 			width: 100%;
 		}
+	}
+`;
+
+export const MobileMenuItem = styled.li`
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 60px;
+	color: #FFF;
+	cursor: pointer;
+
+	a {
+		color: #FFF;
+		text-decoration: none;
 	}
 `;
