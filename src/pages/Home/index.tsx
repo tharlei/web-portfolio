@@ -13,8 +13,8 @@ const Home = () => {
           <MyselfImg src={Selfie} alt='Tharlei Aleixo' />
         </ImgWrapper>
         <TitleWrapper>
-          <h1>Desenvolvedor</h1>
-          <span>Web & Mobile</span>
+          <h1>{window.navigator.userAgent}</h1>
+          {/* <span>Web & Mobile</span> */}
         </TitleWrapper>
       </Container>
     </div>
