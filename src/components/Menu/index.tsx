@@ -16,24 +16,24 @@ const Menu = () => {
   const [mobileSidebar, setMobileSidebar] = useState<boolean>(false)
 
   const [items] = useState<ItemMenu[]>([
-    {
-      id: 2,
-      title: 'Sobre',
-      url: '/about',
-      redirect: '/contact'
-    },
-    {
-      id: 3,
-      title: 'Contato',
-      url: '/contact',
-      redirect: '/'
-    },
+    // {
+    //   id: 2,
+    //   title: 'Sobre',
+    //   url: '/about',
+    //   redirect: '/contact'
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Contato',
+    //   url: '/contact',
+    //   redirect: '/'
+    // },
   ])
 
   function handleDownload() {
     ReactGA.event({
       category: 'Curriculo',
-      action: `Open your Curriculo`
+      action: `Abrir curriculo`
     });
 
     window.open('/Curriculo.pdf');

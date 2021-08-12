@@ -1,58 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactGA from 'react-ga';
 
 import Menu from '../../components/Menu'
-import { FaLinkedin, FaGithub, FaArrowRight, FaEnvelope, FaConnectdevelop } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaConnectdevelop } from 'react-icons/fa';
 import { Container, Background } from './styles';
 import { Header, LogoWrapper } from './styles';
 import { Main, SocialWrapper, Content } from './styles';
-import { Footer, Marker, NextWrapper } from './styles';
 
 interface Props {
   children: JSX.Element
 }
 
-interface ItemMenu {
-  id: number;
-  title: string;
-  url: string;
-  redirect: string;
-}
-
 const Layout = (props: Props) => {
-
-  const [redirect, setRedirect] = useState<string>('/about')
-  const [pageId, setPageId] = useState<number>(1)
-
-  useEffect(() => {
-    const path = window.location.pathname;
-    const search = window.location.search;
-    ReactGA.pageview(`${path}${search}`);
-    setActions(path);
-  }, []);
-
-  function setActions(path: string) {
-    const items = [
-      {
-        id: 2,
-        title: 'Sobre',
-        url: '/about',
-        redirect: '/contact'
-      },
-      {
-        id: 3,
-        title: 'Contato',
-        url: '/contact',
-        redirect: '/'
-      },
-    ] as ItemMenu[];
-
-    const itemIndex = items.findIndex(item => item.url === path);
-    if (itemIndex >= 0) {
-      setPageId(items[itemIndex].id);
-      setRedirect(items[itemIndex].redirect);
-    }
-  }
 
   function handleSocialMedia(url: string, type: string) {
     ReactGA.event({
@@ -91,13 +50,6 @@ const Layout = (props: Props) => {
               {props.children}
             </Content>
           </Main>
-          <Footer>
-            <Marker>0{pageId}</Marker>
-            <NextWrapper to={redirect}>
-              <span>Próxima página</span>
-              <FaArrowRight />
-            </NextWrapper>
-          </Footer>
         </Container>
       </Background>
     </div>
