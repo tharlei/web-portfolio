@@ -14,7 +14,7 @@ const Home = () => {
         </ImgWrapper>
         <TitleWrapper>
           <h1>Desenvolvedor</h1>
-          <span>Full Stack Sênior</span>
+          <span>Full Stack Pleno</span>
         </TitleWrapper>
       </Container>
     </div>
