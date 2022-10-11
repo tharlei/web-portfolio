@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ReactGA from 'react-ga';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { MobileButtonClose, MobileMenuList, MobileMenuItem, Icon, DesktopMenu, DesktopMenuItem, MobileMenu } from './styles';
+import {
+  MobileButtonClose,
+  MobileMenuList,
+  MobileMenuItem,
+  Icon,
+  DesktopMenu,
+  DesktopMenuItem,
+  MobileMenu,
+} from "./styles";
 
 interface ItemMenu {
   id: number;
@@ -12,8 +19,7 @@ interface ItemMenu {
 }
 
 const Menu = () => {
-
-  const [mobileSidebar, setMobileSidebar] = useState<boolean>(false)
+  const [mobileSidebar, setMobileSidebar] = useState<boolean>(false);
 
   const [items] = useState<ItemMenu[]>([
     // {
@@ -28,47 +34,35 @@ const Menu = () => {
     //   url: '/contact',
     //   redirect: '/'
     // },
-  ])
-
-  function handleDownload() {
-    ReactGA.event({
-      category: 'Curriculo',
-      action: `Abrir curriculo`
-    });
-
-    window.open('/Curriculo.pdf');
-  }
+  ]);
 
   return (
     <div id="component-menu">
       <DesktopMenu>
-        {
-          items.map(item => (
-            <DesktopMenuItem key={item.id}>
-              <Link to={item.url}>{item.title}</Link>
-            </DesktopMenuItem>
-          ))
-        }
-        <DesktopMenuItem onClick={handleDownload}>Currículo</DesktopMenuItem>
+        {items.map((item) => (
+          <DesktopMenuItem key={item.id}>
+            <Link to={item.url}>{item.title}</Link>
+          </DesktopMenuItem>
+        ))}
       </DesktopMenu>
 
       <MobileMenu active={mobileSidebar}>
         <MobileMenuList>
-          {
-            items.map(item => (
-              <MobileMenuItem key={item.id} onClick={() => setMobileSidebar(!mobileSidebar)}>
-                <Link to={item.url}>{item.title}</Link>
-              </MobileMenuItem>
-            ))
-          }
-          <MobileMenuItem onClick={handleDownload}>Currículo</MobileMenuItem>
+          {items.map((item) => (
+            <MobileMenuItem
+              key={item.id}
+              onClick={() => setMobileSidebar(!mobileSidebar)}
+            >
+              <Link to={item.url}>{item.title}</Link>
+            </MobileMenuItem>
+          ))}
         </MobileMenuList>
         <MobileButtonClose onClick={() => setMobileSidebar(!mobileSidebar)}>
           <Icon />
         </MobileButtonClose>
       </MobileMenu>
-    </div >
+    </div>
   );
-}
+};
 
 export default Menu;

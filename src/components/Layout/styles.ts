@@ -1,20 +1,20 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import bg from '../../assets/bg.jpg'
+import bg from "../../assets/bg.jpg";
 
 export const Background = styled.div`
-	background: url(${bg});
+  background: url(${bg});
 `;
 
 export const Container = styled.div`
-	@media(min-width: 1024px) {
-		padding: 50px;
-	}
+  @media (min-width: 1024px) {
+    padding: 50px;
+  }
 
-	@media(max-width: 1024px) {
-		padding: 20px;
-	}
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
 `;
 
 /**
@@ -22,36 +22,37 @@ export const Container = styled.div`
  */
 
 export const Header = styled.header`
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-	@media(max-width: 1024px) {
-		margin-top: 20px;
-	}
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+  }
 `;
 
 export const LogoWrapper = styled(Link)`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 26px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #fff;
-	-webkit-tap-highlight-color: transparent;
-	user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  margin-bottom: 3rem;
+  user-select: none;
 
-	span {
-		text-transform: uppercase;
-	}
+  span {
+    text-transform: uppercase;
+  }
 
-	svg {
-		margin-right: 10px;
-	}
+  svg {
+    margin-right: 10px;
+  }
 
-	@media(max-width: 1024px) {
-		font-size: 20px;
-	}
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
 `;
 
 /**
@@ -59,32 +60,32 @@ export const LogoWrapper = styled(Link)`
  */
 
 export const Main = styled.main`
-	display: flex;
-	@media(min-width: 1024px) {
-		min-height: 75vh;
-	}
+  display: flex;
+  @media (min-width: 1024px) {
+    min-height: 75vh;
+  }
 `;
 
 export const SocialWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	font-weight: bold;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  justify-content: center;
 
-	span {
-		cursor: pointer;
-	}
+  span {
+    cursor: pointer;
+  }
 
-	@media(min-width: 1024px) {
-		span {
-			font-size: 18px;
-		}
-	}
+  @media (min-width: 1024px) {
+    span {
+      font-size: 18px;
+    }
+  }
 
-	span {
-		margin-top: 15px;
-		color: #FFF;
-	}
+  span {
+    margin-top: 15px;
+    color: #fff;
+  }
 `;
 
 export const Content = styled.div`
@@ -96,34 +97,34 @@ export const Content = styled.div`
  */
 
 export const Footer = styled.footer`
-	display: flex;
-	justify-content: space-between;
-	color: #FFF;
-	margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 20px;
 `;
 
 export const Marker = styled.h1`
-	font-size: 90px;
-	font-weight: bold;
-	border-bottom: 5px solid #FFF;
+  font-size: 90px;
+  font-weight: bold;
+  border-bottom: 5px solid #fff;
 `;
 
 export const NextWrapper = styled(Link)`
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	transform: rotate(90deg);
-	font-size: 12px;
-	color: #FFF;
-	text-decoration: none;
-	-webkit-tap-highlight-color: transparent;
-	user-select: none;
-	
-	svg {
-		margin-left: 5px;
-	}
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  transform: rotate(90deg);
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 
-	span {
-		text-transform: uppercase;
-	}
+  svg {
+    margin-left: 5px;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
 `;
